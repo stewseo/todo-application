@@ -1,4 +1,4 @@
-package org.example.processor;
+package org.example.todo.processor;
 
 import org.apache.kafka.common.header.Header;
 import org.apache.kafka.common.header.Headers;
@@ -10,11 +10,11 @@ import org.apache.kafka.streams.processor.api.ProcessorSupplier;
 import org.apache.kafka.streams.processor.api.Record;
 import org.apache.kafka.streams.state.KeyValueStore;
 import org.apache.logging.log4j.util.Strings;
-import org.example.model.Command;
-import org.example.model.CreateTaskCommand;
-import org.example.model.DeleteTaskCommand;
-import org.example.model.RenameTaskCommand;
-import org.example.model.Task;
+import org.example.todo.model.Command;
+import org.example.todo.model.CreateTaskCommand;
+import org.example.todo.model.DeleteTaskCommand;
+import org.example.todo.model.RenameTaskCommand;
+import org.example.todo.model.Task;
 
 public class ProcessValidCommandSupplier implements ProcessorSupplier<String, Command, String, Object> {
     private final String etagStoreName;

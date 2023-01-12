@@ -1,4 +1,4 @@
-package org.example;
+package org.example.todo;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.common.serialization.Serde;
@@ -7,12 +7,12 @@ import org.apache.kafka.streams.StreamsBuilder;
 import org.apache.kafka.streams.Topology;
 import org.apache.kafka.streams.state.StoreBuilder;
 import org.apache.kafka.streams.state.Stores;
-import org.example.model.Task;
-import org.example.processor.ProcessValidCommandSupplier;
-import org.example.processor.RejectInvalidCommandSupplier;
-import org.example.processor.ValidateCommandSupplier;
-import org.example.serde.CommandJsonDeserializer;
-import org.example.serde.SerdeFactory;
+import org.example.todo.model.Task;
+import org.example.todo.processor.ProcessValidCommandSupplier;
+import org.example.todo.processor.RejectInvalidCommandSupplier;
+import org.example.todo.processor.ValidateCommandSupplier;
+import org.example.todo.serde.CommandJsonDeserializer;
+import org.example.todo.serde.SerdeFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

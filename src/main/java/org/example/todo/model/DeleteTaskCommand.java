@@ -1,4 +1,4 @@
-package org.example.model;
+package org.example.todo.model;
 
 import lombok.Builder;
 import lombok.Getter;

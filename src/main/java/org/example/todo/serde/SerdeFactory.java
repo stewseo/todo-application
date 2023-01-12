@@ -1,5 +1,5 @@
 
-package org.example.serde;
+package org.example.todo.serde;
 
 import java.util.Map;
 

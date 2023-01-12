@@ -1,4 +1,4 @@
-package org.example;
+package org.example.todo;
 
 import io.confluent.kafka.serializers.KafkaJsonDeserializer;
 import org.apache.kafka.common.header.Header;
@@ -17,10 +17,11 @@ import org.apache.kafka.streams.TestOutputTopic;
 import org.apache.kafka.streams.TopologyTestDriver;
 import org.apache.kafka.streams.processor.internals.Task;
 import org.apache.kafka.streams.test.TestRecord;
-import org.example.model.Command;
-import org.example.model.CreateTaskCommand;
-import org.example.model.DeleteTaskCommand;
-import org.example.model.RenameTaskCommand;
+import org.example.todo.CqrsTopology;
+import org.example.todo.model.Command;
+import org.example.todo.model.CreateTaskCommand;
+import org.example.todo.model.DeleteTaskCommand;
+import org.example.todo.model.RenameTaskCommand;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

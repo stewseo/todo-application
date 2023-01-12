@@ -1,4 +1,4 @@
-package org.example.processor;
+package org.example.todo.processor;
 
 import org.apache.kafka.common.header.Header;
 import org.apache.kafka.common.header.Headers;
@@ -10,7 +10,8 @@ import org.apache.kafka.streams.processor.api.Record;
 
 
 import org.apache.logging.log4j.util.Strings;
-import org.example.model.Command;
+import org.example.todo.model.Command;
+
 @SuppressWarnings({"unchecked", "rawtypes"})
 public class RejectInvalidCommandSupplier implements ProcessorSupplier<String, Command, String, Object> {
     private final String replyTo;

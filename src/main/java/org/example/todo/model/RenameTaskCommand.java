@@ -1,17 +1,14 @@
-package org.example.model;
+package org.example.todo.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.NonNull;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 @Getter
-public class Response {
-    @NonNull
-    String statusCode;
-    Object body;
+public class RenameTaskCommand implements Command {
+    String name;
 }

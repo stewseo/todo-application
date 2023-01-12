@@ -1,9 +1,9 @@
-package org.example.serde;
+package org.example.todo.serde;
 
-import org.example.model.Command;
-import org.example.model.CreateTaskCommand;
-import org.example.model.DeleteTaskCommand;
-import org.example.model.RenameTaskCommand;
+import org.example.todo.model.Command;
+import org.example.todo.model.CreateTaskCommand;
+import org.example.todo.model.DeleteTaskCommand;
+import org.example.todo.model.RenameTaskCommand;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.confluent.kafka.serializers.jackson.Jackson;

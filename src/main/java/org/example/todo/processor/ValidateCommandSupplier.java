@@ -1,4 +1,4 @@
-package org.example.processor;
+package org.example.todo.processor;
 
 import java.util.Arrays;
 
@@ -11,7 +11,7 @@ import org.apache.kafka.streams.processor.api.ProcessorSupplier;
 import org.apache.kafka.streams.processor.api.Record;
 import org.apache.kafka.streams.state.KeyValueStore;
 
-import org.example.model.Command;
+import org.example.todo.model.Command;
 
 public class ValidateCommandSupplier implements ProcessorSupplier<String, Command, String, Command> {
     private final String etagStoreName;
