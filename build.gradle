@@ -1,0 +1,68 @@
+plugins {
+    id 'java-library'
+    id "org.springframework.boot" version "3.0.1"
+    id "io.spring.dependency-management" version "1.1.0"
+    id "io.freefair.lombok" version "6.6.1"
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+    maven {
+        url "https://packages.confluent.io/maven"
+    }
+}
+
+ext {
+
+    springBootStarterVersion = "2.6.6"
+    springBootGradlePluginVersion = "3.0.1"
+    springFrameworksVersion = "2.8.4"
+
+    apacheKafkaStreamsVersion = "3.1.0"
+
+    confluentKafkaJsonSerializer = "7.1.1"
+
+    projectLombokVersion = "1.18.22"
+
+    rockDbJniVersion = "7.0.4"
+
+    jUnit4Version = "4.13.2"
+    jUnitVersion = "5.9.2"
+
+}
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.springframework.boot:spring-boot-starter-parent:${springBootStarterVersion}"
+    implementation "org.springframework.kafka:spring-kafka:${springFrameworksVersion}"
+
+    implementation "org.springframework.boot:spring-boot-gradle-plugin:${springBootGradlePluginVersion}"
+
+
+    implementation "org.apache.kafka:kafka-streams:${apacheKafkaStreamsVersion}"
+    implementation 'org.apache.logging.log4j:log4j-api:2.17.2'
+
+    api 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
+    api 'org.projectlombok:lombok:1.18.24'
+
+    implementation "io.confluent:kafka-json-serializer:${confluentKafkaJsonSerializer}"
+
+
+    implementation 'org.rocksdb:rocksdbjni:7.8.3'
+
+    testImplementation "org.junit.vintage:junit-vintage-engine:${jUnitVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${jUnitVersion}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${jUnitVersion}"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "org.apache.kafka:kafka-streams-test-utils:${apacheKafkaStreamsVersion}"
+    testImplementation "org.springframework.kafka:spring-kafka-test:${springFrameworksVersion}"
+}
+
+test {
+    useJUnitPlatform()
+}
